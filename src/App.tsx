@@ -1,12 +1,10 @@
+import AppRouter from './routers/AppRouter';
 import './App.sass';
 
 const App = () =>
 {
 	return (
-		<div className="App">
-			<p>Portfolio</p>
-			<p className="small">Coming soon</p>
-		</div>
+		<AppRouter />
 	);
 };
 

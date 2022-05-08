@@ -1,0 +1,159 @@
+.app-header
+	z-index: 1000
+	position: fixed
+	width: 100%
+	height: 4rem
+	color: $black
+	font-size: $body-m
+	font-weight: $fw-light
+	letter-spacing: $ls-20
+	text-transform: uppercase
+
+.navbar
+	display: flex
+	justify-content: space-between
+	align-items: center
+	box-sizing: border-box
+	width: 100%
+	height: 100%
+	padding: 0 4rem
+
+.navbar-end
+	display: flex
+	list-style-type: none
+
+	.navbar-item
+		margin-left: $space-32
+
+.navbar-item
+	a:visited,
+	&:visited
+		color: $black
+
+	a:hover,
+	&:hover
+		color: $gray-400
+
+	.active-class
+		color: $primary
+
+		&:visited
+			color: $primary
+
+// DRAW BURGER ICON
+
+.burger-menu
+	display: none
+	box-sizing: border-box
+	width: 2rem
+	height: 2rem
+	padding: .25rem
+	cursor: pointer
+
+.burger-icon::before,
+.burger-icon::after,
+.burger-icon
+	content: ''
+	display: block
+	width: 100%
+	height: 2px
+	border-radius: 1px
+	background-color: $black
+
+.burger-icon::before
+	transform: translateY( -6px )
+	transition-property: opacity
+	transition-duration: 300ms
+
+.burger-icon
+	transform: translateY( 11px )
+	transition-property: transform
+	transition-duration: 300ms
+
+.burger-icon::after
+	transform: translateY( 4px )
+	transition-property: transform
+	transition-duration: 300ms
+
+// CREATE CLOSE ICON
+
+.close-icon::before
+	opacity: 0
+
+.close-icon
+	transform: translateY( 11px ) rotate( -45deg )
+
+.close-icon::after
+	transform: translateY( -2px ) rotate( 90deg )
+
+// RESPONSIVE WEB DESIGN
+
+@media screen and ( max-width: 768px )
+	.navbar
+		padding: 0 2rem
+
+	.navbar-end
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		justify-content: space-between
+		align-items: center
+		height: 4rem
+		padding: 0 4rem
+		background-color: adjust-color($white, $alpha: -0.5 )
+		opacity: 0
+		transform: translateY( -100% )
+		transition-property: transform, opacity
+		transition-duration: 450ms
+
+		.navbar-item
+			margin-left: 0
+
+	.show-menu
+		display: flex
+		opacity: 1
+		transform: translateY( 100% )
+		transition-property: transform, opacity
+		transition-duration: 450ms
+
+	.burger-menu
+		display: block
+
+@media screen and ( max-width: 600px )
+	.app-header
+		height: 3rem
+
+	.navbar
+		padding: 0 1rem
+
+	.navbar-end
+		height: 3rem
+		padding: 0 2rem
+
+	.burger-icon::before,
+	.burger-icon::after,
+	.burger-icon
+		height: 1px
+
+	.burger-icon::before
+		transform: translateY( -5px )
+
+	.close-icon::after
+		transform: translateY( -1px ) rotate( 90deg )
+
+// NAVBAR BUTTON
+
+.navbar-button
+	border: none
+	background-color: transparent
+	color: unset
+	font-family: unset
+	font-size: unset
+	font-weight: unset
+	letter-spacing: unset
+	text-transform: unset
+	cursor: pointer
+
+
+// TODO: Change menu text color in contact page
