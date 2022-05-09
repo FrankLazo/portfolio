@@ -25,7 +25,12 @@
 	.navbar-item
 		margin-left: $space-32
 
-.navbar-item
+// MENU ITEM COLORS
+
+.navbar-item-brand
+	color: $black
+
+	a:link,
 	a:visited,
 	&:visited
 		color: $black
@@ -34,11 +39,62 @@
 	&:hover
 		color: $gray-400
 
-	.active-class
+.navbar-item-dark
+	color: $black
+
+	a:link,
+	a:visited,
+	&:visited
+		color: $black
+
+	a:hover,
+	&:hover
+		color: $gray-400
+
+	@media screen and ( max-width: 768px )
+		color: $secondary-lightest
+
+		a:link,
+		a:visited,
+		&:visited
+			color: $secondary-lightest
+
+		a:hover,
+		&:hover
+			color: $secondary-light
+
+
+.navbar-item-light
+	color: $secondary-lightest
+
+	a:link,
+	a:visited,
+	&:visited
+		color: $secondary-lightest
+
+	a:hover,
+	&:hover
+		color: $secondary
+
+a.active-class-brand
+	&:link,
+	&:visited
 		color: $primary
 
+a.active-class-dark
+	&:link,
+	&:visited
+		color: $primary
+
+	@media screen and ( max-width: 768px )
+		&:link,
 		&:visited
-			color: $primary
+			color: $secondary-light
+
+a.active-class-light
+	&:link,
+	&:visited
+		color: $secondary-light
 
 // DRAW BURGER ICON
 
@@ -101,7 +157,7 @@
 		align-items: center
 		height: 4rem
 		padding: 0 4rem
-		background-color: adjust-color($white, $alpha: -0.5 )
+		background-color: $black
 		opacity: 0
 		transform: translateY( -100% )
 		transition-property: transform, opacity
@@ -154,6 +210,3 @@
 	letter-spacing: unset
 	text-transform: unset
 	cursor: pointer
-
-
-// TODO: Change menu text color in contact page

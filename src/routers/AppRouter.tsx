@@ -13,7 +13,7 @@ const AppRouter = () =>
 			<AppProvider>
 				<Header />
 
-				<main className="no-scroll">
+				<main>
 					<Switch>
 						<Route exact path="/" component={ HomePage }/>
 						<Route exact path="/work" component={ WorkPage }/>

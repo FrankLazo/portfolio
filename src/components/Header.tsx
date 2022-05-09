@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { NavLink }    from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import appData        from '../data/appData';
 import { AppMenuBar } from '../interfaces/AppInterfaces';
@@ -15,25 +15,26 @@ const Header = () =>
 	} = useContext( AppContext );
 
 	const menu : AppMenuBar = appData.userInterface.appMenuBar;
+	const { pathname } = useLocation();
 
 	return (
 		<header className="app-header">
 			<nav className="navbar">
-				<div className="navbar-brand navbar-item">
+				<div className={ `navbar-brand navbar-item navbar-item-${ pathname !== '/contact' ? 'brand' : 'light' }` }>
 					<NavLink
 						exact
 						to="/"
-						activeClassName="active-class">
+						activeClassName="active-class-brand">
 							Frank Lazo
 					</NavLink>
 				</div>
 
 				<div className="navbar-menu">
 					<ul className={ `navbar-end ${ openedMenuBar && 'show-menu' }` }>
-						<li className="navbar-item">
+						<li className={ `navbar-item navbar-item-${ pathname !== '/contact' ? 'dark' : 'light' }` }>
 							<NavLink
 								to="/work"
-								activeClassName="active-class">
+								activeClassName={ `active-class-${ pathname !== '/contact' ? 'dark' : 'light' }` }>
 							{
 								// @ts-ignore
 								menu[ appLanguage ].work
@@ -41,10 +42,10 @@ const Header = () =>
 							</NavLink>
 						</li>
 
-						<li className="navbar-item">
+						<li className={ `navbar-item navbar-item-${ pathname !== '/contact' ? 'dark' : 'light' }` }>
 							<NavLink
 								to="/contact"
-								activeClassName="active-class">
+								activeClassName={ `active-class-${ pathname !== '/contact' ? 'dark' : 'light' }` }>
 							{
 								// @ts-ignore
 								menu[ appLanguage ].contact
@@ -52,7 +53,7 @@ const Header = () =>
 							</NavLink>
 						</li>
 
-						<li className="navbar-item">
+						<li className={ `navbar-item navbar-item-${ pathname !== '/contact' ? 'dark' : 'light' }` }>
 							<button
 								className="navbar-button"
 								onClick={ () => toggleLanguage() }
