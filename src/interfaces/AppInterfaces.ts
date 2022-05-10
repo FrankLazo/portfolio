@@ -76,6 +76,26 @@ export interface ContactData
 	socialLinks:  SocialLinks;
 }
 
+// PROJECTS
+
+export interface TranslatedContent
+{
+	english: string;
+	spanish: string;
+}
+
+export interface ProjectData
+{
+	id:            number;
+	date:          string;
+	title:         TranslatedContent;
+	personal:      boolean;
+	description:   TranslatedContent;
+	urlWebsite:    string;
+	urlRepository: string;
+	imageName:     string;
+}
+
 // APP
 
 export interface AppData
@@ -83,4 +103,5 @@ export interface AppData
 	userInterface: UserInterface;
 	home:          HomeData;
 	contact:       ContactData;
+	projects:      ProjectData[];
 }
