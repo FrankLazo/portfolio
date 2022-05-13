@@ -61,17 +61,17 @@ const WorkPage = () =>
 						<a
 							target="_blank"
 							rel="noreferrer"
-							href={ projects[ projectNumber ].urlRepository }
+							href={ projects[ projectNumber ].urlWebsite }
 							>
-							<div className="project-icon icon-repository"></div>
+							<div className="project-icon icon-website"></div>
 						</a>
 
 						<a
 							target="_blank"
 							rel="noreferrer"
-							href={ projects[ projectNumber ].urlWebsite }
+							href={ projects[ projectNumber ].urlRepository }
 							>
-							<div className="project-icon icon-website"></div>
+							<div className="project-icon icon-repository"></div>
 						</a>
 					</div>
 				</div>
